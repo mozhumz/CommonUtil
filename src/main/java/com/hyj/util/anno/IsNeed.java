@@ -4,7 +4,6 @@ import java.lang.annotation.*;
 
 /**
  * @author huyuanjia
- * @date 2018/12/4 11:29
  * 前端参数-是否必须
  */
 @Target({ElementType.FIELD})

@@ -19,8 +19,7 @@ public class CheckParamsUtil {
     /**
      * string判空
      *
-     * @param params
-     * @return
+     * @param params 参数数组
      */
     public static boolean check(String... params) {
         for (String param : params) {
@@ -44,8 +43,7 @@ public class CheckParamsUtil {
 
     /**
      * 列表判空
-     * @param params
-     * @return
+     * @param params 参数数组
      */
     public static void checkList(List params) {
         if(params==null){
@@ -60,8 +58,7 @@ public class CheckParamsUtil {
 
     /**
      * 列表判空
-     * @param params
-     * @return
+     * @param params  参数数组
      */
     public static boolean checkList_boolean(List params) {
         if(params==null||params.isEmpty()){
@@ -80,8 +77,7 @@ public class CheckParamsUtil {
     /**
      * string List判空
      *
-     * @param params
-     * @return
+     * @param params 参数数组
      */
     public static boolean checkListStr(String... params) {
         for (String param : params) {
@@ -96,7 +92,7 @@ public class CheckParamsUtil {
     /**
      * 检查实体类各个属性值是否为空
      *
-     * @param obj
+     * @param obj 实体对象
      */
     public static void checkObj(Object obj) {
         Field[] declaredFields = obj.getClass().getDeclaredFields();
