@@ -9,7 +9,7 @@
 		<version>7</version>
 	</parent>
 
-	<groupId>com.hyj.util</groupId>
+	<groupId>com.github.mozhumz</groupId>
 	<artifactId>common_util</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>common_util</name>
