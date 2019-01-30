@@ -3,17 +3,14 @@ package com.hyj.util.common;
 import lombok.extern.slf4j.Slf4j;
 
 import com.hyj.util.exception.BaseException;
-import com.hyj.util.exception.ErrorInfo;
 import com.hyj.util.param.CheckParamsUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
  * @author huyuanjia
- * @date 2018/9/18 16:49
  */
 @Slf4j
 public class CommonUtil {
