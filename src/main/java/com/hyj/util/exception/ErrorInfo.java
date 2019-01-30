@@ -14,6 +14,7 @@ public enum ErrorInfo {
     PARAMS_ERROR(10004, "参数错误"),
     
     UNKNOWN_ERROR(10005,"程序内部错误"),
+    PARSE_TIME_ERROR(10006,"时间解析错误"),
     ;
 
     public final String desc;
