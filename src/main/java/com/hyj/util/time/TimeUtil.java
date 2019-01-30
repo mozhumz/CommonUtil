@@ -12,6 +12,7 @@ public class TimeUtil {
 	 * 根据date获取时间字符串
 	 * 
 	 * @param date date
+	 * @return String String
 	 */
 	public static String getDateStr(Date date) {
 		if (date == null) {
@@ -25,6 +26,7 @@ public class TimeUtil {
 	 * 根据字符串获取date
 	 * 
 	 * @param str str
+	 * @return Date Date
 	 */
 	public static Date getDate(String str) {
 		if (!CheckParamsUtil.check(str)) {
