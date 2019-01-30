@@ -20,6 +20,7 @@ public class CheckParamsUtil {
      * string判空
      *
      * @param params 参数数组
+     * @return boolean boolean
      */
     public static boolean check(String... params) {
         for (String param : params) {
@@ -33,6 +34,10 @@ public class CheckParamsUtil {
         return true;
     }
 
+    /**
+     * 对象判空
+     * @param params params
+     */
     public static void check(Object...params){
         for(Object obj:params){
             if(obj==null){
@@ -59,6 +64,7 @@ public class CheckParamsUtil {
     /**
      * 列表判空
      * @param params  参数数组
+     * @return boolean boolean
      */
     public static boolean checkList_boolean(List params) {
         if(params==null||params.isEmpty()){
@@ -78,6 +84,7 @@ public class CheckParamsUtil {
      * string List判空
      *
      * @param params 参数数组
+     * @return boolean boolean
      */
     public static boolean checkListStr(String... params) {
         for (String param : params) {

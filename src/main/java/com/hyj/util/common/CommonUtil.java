@@ -22,7 +22,7 @@ public class CommonUtil {
 	 * 实体类转map
 	 *
 	 * @param obj obj
-	 * @throws Exception Exception
+	 * @return Map Map
 	 */
 	public static Map<String, Object> objectToMap(Object obj) {
 		if (obj == null) {
@@ -49,6 +49,7 @@ public class CommonUtil {
 	 * 
 	 * @param map map
 	 * @param beanClass beanClass
+	 * @return Object Object
 	 */
 	public static Object mapToObject(Map<String, Object> map, Class<?> beanClass) {
 		if (map == null)
@@ -85,6 +86,7 @@ public class CommonUtil {
 	 * 
 	 * @param listStr listStr
 	 * @param object object
+	 * @return List List
 	 */
 	public static List getListByStr(String listStr, Class object) {
 		if (CheckParamsUtil.checkListStr(listStr)) {
