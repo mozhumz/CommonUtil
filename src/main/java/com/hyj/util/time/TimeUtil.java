@@ -1,5 +1,6 @@
 package com.hyj.util.time;
 
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -8,6 +9,7 @@ import com.hyj.util.exception.ErrorInfo;
 import com.hyj.util.param.CheckParamsUtil;
 
 public class TimeUtil {
+	public static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	/**
 	 * 根据date获取时间字符串
 	 * 
@@ -18,7 +20,6 @@ public class TimeUtil {
 		if (date == null) {
 			return null;
 		}
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return sdf.format(date);
 	}
 
@@ -32,7 +33,7 @@ public class TimeUtil {
 		if (!CheckParamsUtil.check(str)) {
 			return null;
 		}
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
 		try {
 			Date date = sdf.parse(str);
 			return date;
@@ -40,5 +41,13 @@ public class TimeUtil {
 			e.printStackTrace();
 			throw new BaseException(ErrorInfo.PARSE_TIME_ERROR.desc);
 		}
+	}
+	
+	/**
+	 * 获取当前时间字符串 
+	 * @return str yyyy-MM-dd HH:mm:ss
+	 */
+	public static String getNowDateStr() {
+		return sdf.format(new Date());
 	}
 }
