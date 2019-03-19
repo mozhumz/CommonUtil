@@ -19,7 +19,7 @@ public class ResData {
 
     /**
      * 正常数据返回
-     * @param data
+     * @param data data
      */
     public ResData(Object data) {
         this.data = data;
@@ -28,8 +28,8 @@ public class ResData {
 
     /**
      * 错误数据返回
-     * @param code
-     * @param msg
+     * @param code code
+     * @param msg msg
      */
     public ResData(int code, String msg) {
         this.code = code;
