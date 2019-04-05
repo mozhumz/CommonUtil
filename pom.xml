@@ -3,34 +3,28 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-<!-- 	<parent> -->
-<!-- 		<groupId>org.sonatype.oss</groupId> -->
-<!-- 		<artifactId>oss-parent</artifactId> -->
-<!-- 		<version>8</version> -->
-<!-- 	</parent> -->
+<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 
 	<groupId>com.github.mozhumz</groupId>
-	<artifactId>common_util</artifactId>
-	<version>1.0.0</version>
-	<name>common_util</name>
-	<description>Demo project for Spring Boot</description>
-	<url>https://github.com/mozhumz/CommonUtil</url>
+	<artifactId>javaNote</artifactId>
+	<version>0.0.1</version>
+	<name>javaNote</name>
+	<description>javaNote project for Spring Boot</description>
+	<url>https://github.com/mozhumz/javaNote</url>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<!-- 文件拷贝时的编码 -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<!-- 编译时的编码 -->
-<!-- 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding> -->
-<!-- 		<sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl> -->
 	</properties>
 
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-<!-- 			<distribution>repo</distribution> -->
+			<distribution>actable</distribution>
 		</license>
 	</licenses>
 
@@ -38,7 +32,7 @@
 		<developer>
 			<name>mozhumz</name>
 			<email>554501252@qq.com</email>
-			<url>https://github.com/mozhumz/CommonUtil</url>
+			<url>https://github.com/mozhumz/javaNote</url>
 		</developer>
 	</developers>
 
@@ -47,168 +41,26 @@
 		<!-- <tag>master</tag> <connection>https://github.com/mozhumz/CommonUtil.git</connection> 
 			<developerConnection>https://github.com/mozhumz</developerConnection> <url>https://github.com/mozhumz/CommonUtil</url> -->
 
-		<connection>scm:git:git@github.com:mozhumz/CommonUtil.git</connection>
-		<developerConnection>scm:git:git@github.com:mozhumz/CommonUtil.git</developerConnection>
-		<url>git@github.com:mozhumz/CommonUtil.git</url>
+		<connection>scm:git:git@github.com:mozhumz/javaNote.git</connection>
+		<developerConnection>scm:git:git@github.com:mozhumz/javaNote.git</developerConnection>
+		<url>git@github.com:mozhumz/javaNote.git</url>
+
 	</scm>
-	
-	<profiles>
-		<profile>
-			<id>sonatype-oss-release</id>
-			<build>
-				<plugins>
-					<!-- nexus staging -->
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.3</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>oss</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
-					<!-- Source -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>3.0.1</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<!-- Javadoc -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.9.1</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<!-- GPG -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
-						<executions>
-							<execution>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<!-- compiler -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.7.0</version>
-						<configuration>
-							<source>${java.version}</source>
-							<target>${java.version}</target>
-							<encoding>${project.build.sourceEncoding}</encoding>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-			<distributionManagement>
-				<snapshotRepository>
-					<id>oss</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-				</snapshotRepository>
-				<repository>
-					<id>oss</id>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-				</repository>
-			</distributionManagement>
-		</profile>
-		<profile>
-			<id>snapshots</id>
-			<build>
-				<plugins>
-					<!-- Source -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>3.0.1</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<!-- Javadoc -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.9.1</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<!-- compiler -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.7.0</version>
-						<configuration>
-							<source>${java.version}</source>
-							<target>${java.version}</target>
-							<encoding>${project.build.sourceEncoding}</encoding>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-			<distributionManagement>
-				<repository>
-					<id>releases</id>
-					<name>Nexus Release Repository</name>
-					<url>http://basic.xdbigdata.com/nexus/content/repositories/releases/</url>
-				</repository>
-				<snapshotRepository>
-					<id>snapshots</id>
-					<name>Nexus Snapshot Repository</name>
-					<url>http://basic.xdbigdata.com/nexus/content/repositories/snapshots/</url>
-				</snapshotRepository>
-			</distributionManagement>
-		</profile>
-	</profiles>
 
 	<!-- <scm> <connection>scm:git:git@gitee.com:sunchenbin/mybatis-enhance.git</connection> 
 		<developerConnection>scm:git:git@gitee.com:sunchenbin/mybatis-enhance.git</developerConnection> 
 		<url>https://github.com/mozhumz/CommonUtil</url> <tag>1.0</tag> </scm> -->
-<!-- 	<distributionManagement> -->
-<!-- 		<snapshotRepository> -->
-<!-- 			<id>oss</id> -->
-<!-- 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url> -->
-<!-- 		</snapshotRepository> -->
-<!-- 		<repository> -->
-<!-- 			<id>oss</id> -->
-<!-- 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> -->
-<!-- 		</repository> -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>oss</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>oss</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
 
-<!-- 	</distributionManagement> -->
+	</distributionManagement>
 
 
 
@@ -270,35 +122,59 @@
 			<version>2.4</version>
 			<classifier>jdk15</classifier>
 		</dependency>
-
-		<!-- swagger-->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.7.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.7.0</version>
-		</dependency>
 	</dependencies>
 
-	<repositories>
-		<!-- 阿里云代码库 -->
-		<repository>
-			<id>maven-ali</id>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>fail</checksumPolicy>
-			</snapshots>
-		</repository>
-	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- Source -->
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+			<!-- Javadoc -->
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+	
+			<!-- GPG -->
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+		</plugins>
+	</build>
 
 
 </project>
