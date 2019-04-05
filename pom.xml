@@ -47,8 +47,8 @@
 		<!-- <tag>master</tag> <connection>https://github.com/mozhumz/CommonUtil.git</connection> 
 			<developerConnection>https://github.com/mozhumz</developerConnection> <url>https://github.com/mozhumz/CommonUtil</url> -->
 
-		<connection>scm:git@github.com:mozhumz/CommonUtil.git</connection>
-		<developerConnection>scm:git@github.com:mozhumz/CommonUtil.git</developerConnection>
+		<connection>scm:git:git@github.com:mozhumz/CommonUtil.git</connection>
+		<developerConnection>scm:git:git@github.com:mozhumz/CommonUtil.git</developerConnection>
 		<url>https://github.com/mozhumz/CommonUtil</url>
 	</scm>
 
