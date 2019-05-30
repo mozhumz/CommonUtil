@@ -10,10 +10,6 @@ public class GsonUtil {
     public static Gson gson = getGson();
 
 
-    /**
-     * json转obj例子:SessionUser user= gson.fromJson(json,new TypeToken<SessionUser>(){}.getType());
-     * @return
-     */
     public static Gson getGson() {
         GsonBuilder builder = new GsonBuilder();
 
@@ -24,6 +20,7 @@ public class GsonUtil {
 //                return new Date(json.getAsJsonPrimitive().getAsLong());
 //            }
 //        });
+        //json转obj例子:SessionUser user= gson.fromJson(json,new TypeToken<SessionUser>(){}.getType());
         builder.registerTypeAdapter(Date.class, new GsonConfig()).setDateFormat("yyyy-MM-dd HH:mm:ss");
         return builder.create();
     }
