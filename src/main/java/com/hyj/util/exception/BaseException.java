@@ -1,5 +1,8 @@
 package com.hyj.util.exception;
 
+import lombok.Data;
+
+@Data
 public class BaseException extends RuntimeException {
 	private String msg;
 	private Integer code;

@@ -33,9 +33,20 @@ public class JsonResponse<R> implements Serializable {
         response.message = message;
         return response;
     }
+    public static <R> JsonResponse<R> message(boolean status, String message,int code) {
+        JsonResponse<R> response = new JsonResponse();
+        response.status = status;
+        response.message = message;
+        response.code=code;
+        return response;
+    }
 
     public static <R> JsonResponse<R> failure(String message) {
         return message(false, message);
+    }
+
+    public static <R> JsonResponse<R> failure(int code,String message) {
+        return message(false, message,code);
     }
 
     public JsonResponse<R> setOtherData(Map<String, Object> otherData) {

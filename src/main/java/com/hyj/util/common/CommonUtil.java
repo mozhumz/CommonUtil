@@ -5,9 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import com.hyj.util.exception.BaseException;
 import com.hyj.util.param.CheckParamsUtil;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.net.URLEncoder;
 import java.util.*;
+import org.apache.commons.codec.binary.Base64;
 
 /**
  * @author huyuanjia
@@ -92,5 +96,45 @@ public class CommonUtil {
 		}
 		return null;
 	}
+
+	/**
+	 * 处理中文乱码
+	 * @param request
+	 * @param name
+	 * @return
+	 */
+	public static String getName(HttpServletRequest request, String name){
+		String agent = (String) request.getHeader("USER-AGENT");
+		if (CheckParamsUtil.check(name)) {
+			try {
+
+				if (agent != null && agent.indexOf("Firefox") > -1) {// 处理火狐乱码
+					name = "=?UTF-8?B?" + (new String(Base64
+							.encodeBase64(name.getBytes("UTF-8")))) + "?=";
+				} else {
+					//其他浏览器
+					name = URLEncoder.encode(name, "UTF-8");
+				}
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
+		return name;
+	}
+
+	/**
+	 * 四舍五入保留n位小数
+	 * @param d
+	 * @param n
+	 * @return
+	 */
+	public static Double get4To5(Double d,int n){
+		if(d==null){
+			return d;
+		}
+		return Double.parseDouble(String.format("%."+n+"f",d));
+	}
+
+
 
 }
