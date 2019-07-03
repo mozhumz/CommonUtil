@@ -44,7 +44,7 @@ public class SwaggerAutoConfiguration implements BeanFactoryAware {
      * Config swagger docket bean
      *
      * @return swagger docket bean list
-     * @throws Exception
+     * @throws Exception Exception
      */
     @Bean
     @ConditionalOnMissingBean
