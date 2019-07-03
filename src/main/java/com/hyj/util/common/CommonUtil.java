@@ -99,9 +99,9 @@ public class CommonUtil {
 
 	/**
 	 * 处理中文乱码
-	 * @param request
-	 * @param name
-	 * @return
+	 * @param request request
+	 * @param name 原字符串
+	 * @return String
 	 */
 	public static String getName(HttpServletRequest request, String name){
 		String agent = (String) request.getHeader("USER-AGENT");
@@ -124,9 +124,9 @@ public class CommonUtil {
 
 	/**
 	 * 四舍五入保留n位小数
-	 * @param d
-	 * @param n
-	 * @return
+	 * @param d 原数字
+	 * @param n 要保留的小数位数
+	 * @return double
 	 */
 	public static Double get4To5(Double d,int n){
 		if(d==null){
