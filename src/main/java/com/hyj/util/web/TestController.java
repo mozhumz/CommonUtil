@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author huyuanjia
- * @date 2019/4/2 16:55
  */
 @RestController
 @Api(value = "测试相关接口", description = "测试相关接口")
