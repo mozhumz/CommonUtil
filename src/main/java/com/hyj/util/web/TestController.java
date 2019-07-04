@@ -26,7 +26,7 @@ public class TestController {
     @ApiOperation(value = "test")
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public Object testAdd() {
-        throw new BaseException("登陆失效",10005);
+        throw new BaseException(10005,"登陆失效");
 
     }
 
