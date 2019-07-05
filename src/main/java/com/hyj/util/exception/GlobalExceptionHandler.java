@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     /**
      * System exception log message
      */
-    private static final String SYSTEM_EXCEPTION = "System be happend exception!";
+    private static final String SYSTEM_EXCEPTION = "System be happened exception!";
 
     /**
      * Argument exception log message
@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
         log.error(SYSTEM_EXCEPTION, e);
         BaseException baseException= (BaseException) e;
         return JsonResponse
-                .failure(e.getMessage())
+                .failure(baseException.getMsg())
                 .setCode(baseException.getCode());
     }
 
