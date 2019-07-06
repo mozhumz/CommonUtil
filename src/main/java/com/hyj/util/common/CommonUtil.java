@@ -30,7 +30,7 @@ public class CommonUtil {
 			return null;
 		}
 
-		Map<String, Object> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<String, Object>();
 
 		Field[] declaredFields = obj.getClass().getDeclaredFields();
 		for (Field field : declaredFields) {
