@@ -11,8 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author huyuanjia
- * @date 2019/4/2 16:55
+ * @author mozhumz
  */
 @RestController
 @Api(value = "测试相关接口", description = "测试相关接口")
