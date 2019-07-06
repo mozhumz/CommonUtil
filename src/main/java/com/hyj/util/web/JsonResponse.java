@@ -6,7 +6,7 @@ import java.util.Map;
 
 
 public class JsonResponse<R> implements Serializable {
-    private static final long serialVersionUID = 7574078101944305355L;
+
     private boolean status;
     private int code;
     private String message;

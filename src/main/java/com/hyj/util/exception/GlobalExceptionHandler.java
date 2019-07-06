@@ -3,6 +3,7 @@ package com.hyj.util.exception;
 import javax.servlet.http.HttpServletRequest;
 
 import com.hyj.util.enums.ErrorCode;
+import com.hyj.util.param.CheckParamsUtil;
 import com.hyj.util.web.JsonResponse;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
@@ -18,9 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * <b>0.0.4: </b>Add method argumentExceptionHandler
  *
- * @author lshaci
- * @since 0.0.3
- * @version 0.0.4
+ * @author mozhumz
+ * @since 1.0.0
+ * @version 1.0.7
  */
 @Slf4j
 @ControllerAdvice
@@ -29,7 +30,7 @@ public class GlobalExceptionHandler {
     /**
      * System exception log message
      */
-    private static final String SYSTEM_EXCEPTION = "System be happened exception!";
+    private static final String SYSTEM_EXCEPTION = "System exception!";
 
     /**
      * Argument exception log message
@@ -47,6 +48,13 @@ public class GlobalExceptionHandler {
     public JsonResponse<Object> baseExceptionHandler(HttpServletRequest req, Exception e) {
         log.error(SYSTEM_EXCEPTION, e);
         BaseException baseException= (BaseException) e;
+        if(baseException.getCode()==null){
+            return JsonResponse
+                    .failure(baseException.getMsg());
+        }
+        if(baseException.getMsg()==null){
+            baseException.setMsg("");
+        }
         return JsonResponse
                 .failure(baseException.getMsg())
                 .setCode(baseException.getCode());
