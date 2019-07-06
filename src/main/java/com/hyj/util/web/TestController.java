@@ -26,7 +26,7 @@ public class TestController {
     @ApiOperation(value = "添加")
     @RequestMapping(value = "/testAdd", method = RequestMethod.GET)
     public Object testAdd() {
-        throw new BaseException("ss",1);
+        throw new BaseException("ss");
     }
 
 

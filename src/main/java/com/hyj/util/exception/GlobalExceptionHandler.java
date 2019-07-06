@@ -48,13 +48,13 @@ public class GlobalExceptionHandler {
     public JsonResponse<Object> baseExceptionHandler(HttpServletRequest req, Exception e) {
         log.error(SYSTEM_EXCEPTION, e);
         BaseException baseException= (BaseException) e;
-        if(baseException.getCode()==null){
-            return JsonResponse
-                    .failure(baseException.getMsg());
-        }
         if(baseException.getMsg()==null){
-            baseException.setMsg("");
+            baseException.setMsg(ErrorCode.INTERNAL_PROGRAM_ERROR.getMsg());
         }
+        if(baseException.getCode()==null){
+            baseException.setCode(ErrorCode.INTERNAL_PROGRAM_ERROR.getCode());
+        }
+
         return JsonResponse
                 .failure(baseException.getMsg())
                 .setCode(baseException.getCode());
