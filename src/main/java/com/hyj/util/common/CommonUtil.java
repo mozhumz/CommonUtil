@@ -86,7 +86,7 @@ public class CommonUtil {
 	 * 将字符串数组转为list列表
 	 * 
 	 * @param listStr listStr
-	 * @param object object
+	 * @param object list列表元素类型
 	 * @return List List
 	 */
 	public static List getListByStr(String listStr, Class object) {
@@ -105,7 +105,7 @@ public class CommonUtil {
 	 */
 	public static String getName(HttpServletRequest request, String name){
 		String agent = (String) request.getHeader("USER-AGENT");
-		if (CheckParamsUtil.check(name)) {
+		if (CheckParamsUtil.check(false,name)) {
 			try {
 
 				if (agent != null && agent.indexOf("Firefox") > -1) {// 处理火狐乱码

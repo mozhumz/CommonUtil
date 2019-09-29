@@ -30,7 +30,7 @@ public class TimeUtil {
 	 * @return Date Date
 	 */
 	public static Date getDate(String str) {
-		if (!CheckParamsUtil.check(str)) {
+		if (!CheckParamsUtil.check(false,str)) {
 			return null;
 		}
 		
